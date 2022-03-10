@@ -9,7 +9,10 @@ class PostController extends Controller
     public function index(){
         // return "Hello world!!! :-)";
         $posts = Post::all();
-        dd($posts->created_at);
+        foreach($posts as $post){
+            dump($post->image,);
+        }
+        dd('end');
     }
 
 }
