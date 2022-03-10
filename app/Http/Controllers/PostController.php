@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function index(){
         // return "Hello world!!! :-)";
-        $posts = Post::all();
+        $posts = Post::where('is_published', 1)->get();
         foreach($posts as $post){
             dump($post->image,);
         }
