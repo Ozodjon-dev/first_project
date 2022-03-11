@@ -50,10 +50,13 @@ class PostController extends Controller
     }
 
     public function update(){
-        $updatedVar = post::find(6);
-        $updatedVar->update([
+        $updatedVars = post::all();
+        foreach ($updatedVars as $updatedVar){
+            $updatedVar->update([
             'content' => '----------------------'
         ]);
-        dd('updated');
+        }
+
+        dd('updated all');
     }
 }
