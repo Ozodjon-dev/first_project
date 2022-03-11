@@ -9,5 +9,5 @@ class Post extends Model
 {
     use HasFactory;
     protected $table = 'posts';
-    const CREATED_AT = 'creation_date';
+    protected $guarded = false;
 }
