@@ -12,7 +12,7 @@ class PostController extends Controller
         foreach($posts as $post){
             dump($post->title);
         }
-        dd('end');
+        dump('end');
     }
 
     public function create()
@@ -33,15 +33,27 @@ class PostController extends Controller
                 'is_published' => 1
             ]
         ];
-        
-        Post::create([
-            'title' => 'TITTLE',
-            'content' => 'EEEEEEEEEEEEEE',
-            'image' => 'EEEEEEEEEEE.jpg',
-            'likes' => 88,
-            'is_published' => 1  
-        ]);
-        dd('end');
+        foreach($postsArr as $item){
+            // dump($item);
+            Post::create($item);
+        }
+        dd('created');
     }
     
+    public function users(){
+        $users = Post::where('is_published', "1")->get();
+        // $user = $users->where('is_published');
+        foreach ($users as $user){
+            dump($user->content);
+        }
+        dump('end');
+    }
+
+    public function update(){
+        $updatedVar = post::find(6);
+        $updatedVar->update([
+            'content' => '----------------------'
+        ]);
+        dd('updated');
+    }
 }
