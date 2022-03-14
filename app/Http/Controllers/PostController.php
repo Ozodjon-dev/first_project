@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Post;
 class PostController extends Controller
@@ -53,10 +52,14 @@ class PostController extends Controller
         $updatedVars = post::all();
         foreach ($updatedVars as $updatedVar){
             $updatedVar->update([
-            'content' => '----------------------'
-        ]);
-        }
-
+                'content' => '----------------------'
+            ]);
+        }   
         dd('updated all');
+    }
+    public function delete(){
+        $post = post::withTrashed()->where('id', 3);
+        $post->restore();
+        dd("deleted");
     }
 }
