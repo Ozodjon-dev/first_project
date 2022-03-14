@@ -88,4 +88,28 @@ class PostController extends Controller
         dd("finished");
     }
     
+    public function updateOrCreate(){
+        $anotherPost = 
+        [
+            'title' => 'some title blabla',
+            'content' => 'some cntent kdkkdkkdkdkkd',
+            'image' => 'blabla.jpg',
+            'likes' => 25,
+            'is_published' => 0 
+        ];
+
+        $post = post::updateOrCreate(
+            [
+                'title' => '@@@@@@@@@@@@@@@'
+            ],[
+                'title' => 'some@@@@@@@@@@@@@@@ title blabla',
+                'content' => 'some updated content kdkkdkkdkdkkd',
+                'image' => 'updated blabla.jpg',
+                'likes' => 25,
+                'is_published' => 0  
+            ]);
+            dump($post->content);
+            dd(555555555555555);
+    }
+
 }
