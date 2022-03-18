@@ -5,13 +5,15 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 class PostController extends Controller
 {
+    public function main(){
+        return '<h1>Hello world!</h1>';
+    }
+
     public function index(){
-        // return "Hello world!!! :-)";
-        $posts = Post::where('likes', '<=', 50)->get();
-        foreach($posts as $post){
-            dump($post->title);
-        }
-        dump('end');
+        $posts = post::all();
+        return view('posts', compact('posts'));
+        dump($posts);
+        // dump('end');
     }
 
     public function create()
