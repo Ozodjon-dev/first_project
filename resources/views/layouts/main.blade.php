@@ -8,7 +8,17 @@
 </head>
 <body>
     <div>
-        yield('content')
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="{{ route('main.index') }}">Main</a></li>
+                    <li><a href="{{ route('posts.index') }}">Posts</a></li>
+                    <li><a href="{{ route('about.index') }}">About</a></li>
+                    <li><a href="{{ route('contacts.index') }}">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        @yield('content')
     </div>
 </body>
 </html>
