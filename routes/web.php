@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/posts/create', 'PostController@create');
 Route::get('/posts/users', 'PostController@users');
@@ -16,3 +17,6 @@ Route::get('/about', 'AboutController@index')->name('about.index');
 Route::get('/contacts', 'contactController@index')->name('contacts.index');
 Route::get('/main', 'mainController@index')->name('main.index');
 Route::get('/posts', 'PostController@index')->name('posts.index');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
