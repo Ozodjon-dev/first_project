@@ -14,6 +14,11 @@ class PostController extends Controller
     {
         return view('post.create');
     }
+
+    public function store()
+    {
+        dd('111111111111111111');
+    }
     
     // public function users(){
     //     $users = Post::where('is_published', "1")->get();
