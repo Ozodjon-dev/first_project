@@ -17,7 +17,15 @@ class PostController extends Controller
 
     public function store()
     {
-        dd('111111111111111111');
+        $data = request()->validate([
+            'title' => 'string',
+            'content' => 'string',
+            'image' => 'string',    
+            'likes' => 'integer',
+            'is_published' => 'integer',
+        ]);
+        Post::create($data);
+        return redirect()->route('posts.index');
     }
     
     // public function users(){

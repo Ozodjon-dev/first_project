@@ -15,7 +15,7 @@
               <div class="row g-4">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="" required="">
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
@@ -23,7 +23,7 @@
 
               <div class="col-sm-6">
                 <label for="lastName" class="form-label">Content</label>
-                <input type="text" class="form-control" id="content" name="content" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="content" name="content" placeholder="Content" value="" required="">
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -31,7 +31,7 @@
 
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">Image</label>
-                <input type="text" class="form-control" id="image" name="image" name="title" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="image" name="image" name="title" placeholder="Image" value="" required="">
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
@@ -39,7 +39,7 @@
 
               <div class="col-sm-6">
                 <label for="lastName" class="form-label">Likes</label>
-                <input type="text" class="form-control" id="content" name="content" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="content" name="likes" placeholder="Likes" value="" required="">
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -47,14 +47,14 @@
 
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">Is published</label>
-                <input type="int" class="form-control" id="image" name="is_published" name="is_published" placeholder="" value="" required="">
+                <input type="int" class="form-control" id="image" name="is_published" name="is_published" placeholder="Is published" value="" required="">
                 <div class="invalid-feedback">
                   Valid is published is required.
                 </div>
               </div>
 
               <div class="mt-3 col-md-12">
-                <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">Continue to checkout</button>                
+                <button class="w-100 btn btn-primary btn-lg mt-3" type="submit"><h3>Create</h3</button>     
               </div>
 
 

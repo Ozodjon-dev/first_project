@@ -28,7 +28,7 @@
             <input class="form-control ml-2" type="datetime-local" placeholder="Search" aria-label="Search">
             <input class="form-control ml-2" type="datetime-local" placeholder="Search" aria-label="Search">
             <button class="btn btn-info ml-2" type="submit">Search</button>
-            <button class="btn btn-info ml-2" type="submit"><h3><b>+</b></h3></button>
+            <a href="{{ route('posts.create') }}"><button class="btn btn-info ml-2" type="button"><h3><b>+</b></h3></button></a>
         </form>
     </nav>
 
