@@ -10,37 +10,10 @@ class PostController extends Controller
         return view('post.index', compact('posts'));
     }
 
-    // public function index(){
-    //     $posts = post::all();
-    //     return view('posts', compact('posts'));
-    //     dump($posts);
-    //     // dump('end');
-    // }
-
-    // public function create()
-    // {
-    //     $postsArr = [
-    //         [
-    //             'title' => 'some title blabla',
-    //             'content' => 'some cntent kdkkdkkdkdkkd',
-    //             'image' => 'blabla.jpg',
-    //             'likes' => 25,
-    //             'is_published' => 0
-    //         ],
-    //         [
-    //             'title' => 'TITTLE',
-    //             'content' => 'EEEEEEEEEEEEEE',
-    //             'image' => 'EEEEEEEEEEE.jpg',
-    //             'likes' => 88,
-    //             'is_published' => 1
-    //         ]
-    //     ];
-    //     foreach($postsArr as $item){
-    //         // dump($item);
-    //         Post::create($item);
-    //     }
-    //     dd('created');
-    // }
+    public function create()
+    {
+        return view('post.create');
+    }
     
     // public function users(){
     //     $users = Post::where('is_published', "1")->get();
