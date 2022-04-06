@@ -17,12 +17,14 @@ Route::get('/about', 'AboutController@index')->name('about.index');
 Route::get('/contacts', 'contactController@index')->name('contacts.index');
 Route::get('/main', 'mainController@index')->name('main.index');
 
-
+// --------------------------------------------------------
 
 Route::get('/posts', 'PostController@index')->name('posts.index');
 Route::get('/posts/create', 'PostController@create')->name('posts.create');
 Route::post('/posts', 'PostController@store')->name('posts.store');
+Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
 
+// --------------------------------------------------------
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Http\Controllers;
 class PostController extends Controller
 {
     public function index(){
@@ -26,6 +27,11 @@ class PostController extends Controller
         ]);
         Post::create($data);
         return redirect()->route('posts.index');
+    }
+    public function show(Post $post)
+    {
+        return view('post.show', compact('post'));
+		// return view('posts.show', compact($id));
     }
     
     // public function users(){
