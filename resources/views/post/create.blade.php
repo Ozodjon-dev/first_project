@@ -13,44 +13,79 @@
             <form class="needs-validation" action="{{ route('posts.store') }}" method="post">
               @csrf
               <div class="row g-4">
-              <div class="col-sm-6">
-                <label for="firstName" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="" required="">
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
+              <div class="form-group col-sm-6">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="title" value="{{ old('title') }}">
+
+                @error('title')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+
               </div>
 
               <div class="col-sm-6">
-                <label for="lastName" class="form-label">Content</label>
-                <input type="text" class="form-control" id="content" name="content" placeholder="Content" value="" required="">
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
+                <label for="content" class="form-label">Content</label>
+                <input type="text" class="form-control" id="content" name="content" placeholder="Content" value="{{ old('content') }}">
+
+                @error('content')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+
               </div>
 
               <div class="col-sm-6">
-                <label for="firstName" class="form-label">Image</label>
-                <input type="text" class="form-control" id="image" name="image" name="title" placeholder="Image" value="" required="">
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
+                <label for="image" class="form-label">Image</label>
+                <input type="text" class="form-control" id="image" name="image" name="title" placeholder="Image" value="{{ old('image') }}">
+
+                @error('image')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+
               </div>
 
               <div class="col-sm-6">
-                <label for="lastName" class="form-label">Likes</label>
-                <input type="text" class="form-control" id="content" name="likes" placeholder="Likes" value="" required="">
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
+                <label for="likes" class="form-label">Likes</label>
+                <input type="text" class="form-control" id="likes" name="likes" placeholder="Likes" value="{{ old('likes') }}">
+
+                @error('likes')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+
               </div>
 
               <div class="col-sm-6">
-                <label for="firstName" class="form-label">Is published</label>
-                <input type="int" class="form-control" id="image" name="is_published" name="is_published" placeholder="Is published" value="" required="">
-                <div class="invalid-feedback">
-                  Valid is published is required.
-                </div>
+                <label for="is_published" class="form-label">Is published</label>
+                <input type="int" class="form-control" id="is_published" name="is_published" name="is_published" placeholder="Is published" value="{{ old('is_published') }}">
+                
+                @error('is_published')
+                <p class="text-danger">The is published field is required.</p>
+                @enderror
+
+              </div>
+
+              <div class="col-sm-6">
+                <label for="category">select category </label>
+                <select class="form-control" id="category" name="category_id">
+                  @foreach($categories as $category)
+                    <option
+                      value="{{ $category->id }}">{{ $category->title }}
+                    </option>
+                  @endforeach
+                </select>
+              </div>
+
+              <div class="col-sm-6">
+              <label for="tags">Tags</label>
+                <select multiple class="select form-control" id+"tags" name="tags[]">
+
+                @foreach($tags as $tag)
+                  <option
+                    {{ (is_array(old('tags')) && in_array($tag->id, old('tags'))) ? ' selected' : '' }}
+                    value="{{ $tag->id }}">{{ $tag->title }}
+                  </option>
+                @endforeach
+                
+                </select>
               </div>
 
               <div class="mt-3 col-md-12">
@@ -74,9 +109,9 @@
       </footer>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/bootstrap.bundle.min.js"></script>
 
-    <script src="js/form-validation.js"></script>
+    <script src="js/form-validation.js"></script> -->
       
   </body>
 @endsection

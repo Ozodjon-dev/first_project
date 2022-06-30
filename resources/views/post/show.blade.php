@@ -38,13 +38,18 @@
       </tr>
   </tbody>
 </table>
-<div class="container">
-  <div class="row">
-    <div class="col text-center">
-      <a href="{{ route('posts.index') }}"><button class="btn btn-info col-md-2" type="button"><h3>Back</h3></button></a>
+  <div class="row justify-content-md-center">
+    <div class="col-lg-3 center">
+      <form action="{{ route('posts.delete', $post->id) }}" method="Post">
+        @csrf
+        @method('delete')
+        <input type="submit" class="btn btn-danger col-md-2" value="Delete">
+      </form>
     </div>
+    <div class="col-lg-3"><a href="{{ route('posts.edit', $post->id) }}"><button class="btn btn-info col-6 col-md-2" type="button"><h3>Edit</h3></button></a></div>
+    <div class="col-lg-3"><a href="{{ route('posts.index') }}"><button class="btn btn-info col-md-2" type="button"><h3>Back</h3></button></a></div>
+
   </div>
-</div>
 
 <!-- <div>{{ $post->id }}</div>
 <div>{{ $post->title }}</div>

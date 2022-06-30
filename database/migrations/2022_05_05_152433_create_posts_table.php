@@ -17,13 +17,15 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->string('image')->nullable();
-            $table->unsignedBigInteger('likes')->nullable();
+            $table->string('image');
+            $table->unsignedBigInteger('likes');
             $table->boolean('is_published')->default(1);
             $table->timestamps();
-            
-            
             $table->softDeletes();
+            
+            $table->unsignedBigInteger('category_id');
+
+
         });
     }
 

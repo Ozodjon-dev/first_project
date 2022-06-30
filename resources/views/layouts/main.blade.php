@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('js/bootstrap.min.js') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('js/bootstrap.bundle.min.js') }}">
+    <link rel="stylesheet" href="{{ asset('js/form-validation.js') }}"> -->
     <title>Document</title>
 </head>
 <body>
@@ -15,7 +17,7 @@
             <a class="nav-link" href="{{ route('main.index') }}"><h4>Main</h4></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="{{ route('posts.index') }}"><h4>Posts</h4></a>
+            <a class="nav-link" href="{{ route('posts.index') }}"><h4>Shartnomalar</h4></a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{ route('about.index') }}"><h4>About</h4></a>
@@ -28,7 +30,7 @@
             <input class="form-control ml-2" type="datetime-local" placeholder="Search" aria-label="Search">
             <input class="form-control ml-2" type="datetime-local" placeholder="Search" aria-label="Search">
             <button class="btn btn-info ml-2" type="submit">Search</button>
-            <a href="{{ route('posts.create') }}"><button class="btn btn-info ml-2" type="button"><h3><b>+</b></h3></button></a>
+            <a href="{{ route('post.create') }}"><button class="btn btn-info ml-2" type="button">Create</button></a>
         </form>
     </nav>
 
