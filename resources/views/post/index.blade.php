@@ -1,4 +1,3 @@
-use Illuminate\Support\Facades\View;
 @extends('layouts.main')
 @section('content')
 <table class="table table-dark table-striped">
