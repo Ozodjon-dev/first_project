@@ -7,16 +7,14 @@ use App\Models\Tag;
 use App\Models\Category;
 use App\Http\Requests\Post\StoreRequest;
 
-class StoreController extends Controller
+class StoreController extends BaseController
 {
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        $tags = $data['tags'];
-        unset($data['tags']);
 
-        $post = Post::create($data);
-        $post->tags()->attach($tags, ['created_at' => new \DateTime('now')]);
+        $this->service->store($data);
+
         return redirect()->route('posts.index');
     }
 }
