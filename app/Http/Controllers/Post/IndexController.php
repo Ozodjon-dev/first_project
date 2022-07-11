@@ -6,7 +6,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use App\Models\Category;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
     public function __invoke()
     {

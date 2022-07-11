@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Services\Post;
-
+use App\Models\Post;
 
 class Service
 {
@@ -12,6 +12,7 @@ class Service
 
         $post = Post::create($data);
         $post->tags()->attach($tags);
+        
     }
 
     public function update($post, $data)
