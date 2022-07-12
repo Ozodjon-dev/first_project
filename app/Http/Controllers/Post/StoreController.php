@@ -7,7 +7,7 @@ use App\Models\Tag;
 use App\Models\Category;
 use App\Http\Requests\Post\StoreRequest;
 use App\Services\Post\Service;
-use App\Http\Controllers\Post\StoreController;
+use App\Http\Controllers\Post\StoreController as SController;
 
 class StoreController extends BaseController
 {
