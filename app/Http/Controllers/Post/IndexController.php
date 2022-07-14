@@ -10,7 +10,7 @@ class IndexController extends BaseController
 {
     public function __invoke()
     {
-        $posts = post::all();
+        $posts = post::paginate(10);
         return view('post.index', compact('posts'));
 
         // $category = Category::find(1);
