@@ -21,6 +21,9 @@ class IndexController extends BaseController
         if (isset($data['title'])){
             $query->where('title', 'like', "%{$data['title']}%");
         }
+        if (isset($data['content'])){
+            $query->where('content', 'like', "%{$data['content']}%");
+        }
         $posts = $query->get();
         dd($posts);
         // $posts = post::paginate(8);
